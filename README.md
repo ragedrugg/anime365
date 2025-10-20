@@ -2,10 +2,8 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![PyPI Version](https://img.shields.io/badge/pypi-1.0.0-orange.svg)](https://pypi.org/project/anime365/)
-[![Downloads](https://img.shields.io/badge/downloads-monthly-brightgreen.svg)](https://pypi.org/project/anime365/)
-[![Status](https://img.shields.io/badge/status-stable-success.svg)](https://github.com/ragedrugg/anime365)
+![Downloads](https://static.pepy.tech/badge/anime365)
 
 Асинхронная Python библиотека для работы с API сайта [Anime365](https://smotret-anime.online).
 
@@ -81,8 +79,6 @@ client = Anime365Client(
 - pydantic >= 2.0.0
 
 ## Лицензия
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 MIT License
 
