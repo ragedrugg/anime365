@@ -1,0 +1,26 @@
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [pyproject.toml] # публикуем только когда меняется версия, иначе повторная публикация упадёт
+
+permissions:
+  contents: read
+  id-token: write # нужно для доверенной публикации (OIDC) без токена PyPI
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build
+      - run: python -m build
+      - run: pip install twine && twine check dist/*
+      - uses: pypa/gh-action-pypi-publish@release/v1

@@ -1,3 +1,5 @@
+.omc/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -142,7 +144,6 @@ Thumbs.db
 # Project specific
 token.txt
 *.log
-test_*.py
-demo_*.py
-launcher.py
-run_demo.*
+/demo_*.py
+/launcher.py
+/run_demo.*

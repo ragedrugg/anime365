@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "anime365"
+version = "2.0.0"
+description = "Python-клиент для API anime365 (smotret-anime.app / anime365.ru): каталог, переводы, видео, аккаунт и загрузка через tus — sync и async на httpx"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "ragedrugg", email = "rage@dvxchsquad.dev" }]
+requires-python = ">=3.10"
+dependencies = ["httpx>=0.27", "pydantic>=2.7", "anyio>=4.0"]
+keywords = ["anime", "api", "wrapper", "client", "httpx", "smotret-anime", "anime365", "tus", "openapi", "async"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+  "Topic :: Multimedia :: Video",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/ragedrugg/anime365"
+Documentation = "https://github.com/ragedrugg/anime365#readme"
+Repository = "https://github.com/ragedrugg/anime365"
+Issues = "https://github.com/ragedrugg/anime365/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "respx>=0.21", "ruff>=0.6", "mypy>=1.11", "build>=1.2", "twine>=5"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/anime365"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
